@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171522">
+  <title>Cards Beam Animation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="page-header">
+      <p class="eyebrow">HTML · CSS · JAVASCRIPT</p>
+      <h1>Cards <span>Beam</span> Animation</h1>
+      <p class="subtitle">A little light makes everything stand out.</p>
+    </header>
+
+    <section class="demo-frame" aria-label="Animated beam cards preview">
+      <div class="demo-stage">
+        <div class="beam beam-one"></div>
+        <div class="beam beam-two"></div>
+        <article class="beam-card card-left">
+          <div class="card-top"><span class="avatar avatar-purple">A</span><span>ABOUT THE PROJECT</span><span class="dots">•••</span></div>
+          <h2>Build something<br><em>remarkable.</em></h2>
+          <p>Thoughtful details. Beautiful experiences. Made for the web.</p>
+          <div class="mini-tags"><span>DESIGN</span><span>DEVELOPMENT</span></div>
+        </article>
+        <article class="beam-card card-main">
+          <div class="gradient-art">
+            <span class="art-label">CREATE WITHOUT LIMITS</span>
+            <div class="art-orb"></div>
+            <span class="art-caption">A brighter idea.</span>
+          </div>
+          <div class="card-footer">
+            <div><strong>Creative Studio</strong><small>Digital experiences, reimagined.</small></div>
+            <span class="arrow">↗</span>
+          </div>
+        </article>
+        <article class="beam-card card-right">
+          <div class="small-art"><span>01</span><b>Make it<br>matter.</b></div>
+          <div class="card-footer"><div><strong>New collection</strong><small>Explore the latest</small></div><span class="arrow">↗</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="details">
+      <div class="code-panel">
+        <div class="panel-head"><span class="file-icon html-icon">⌘</span><b>index.html</b><span class="window-dots"><i></i><i></i><i></i></span></div>
+        <pre><code><em>&lt;section</em> class=<strong>"beam-grid"</strong><em>&gt;</em>
+  <em>&lt;article</em> class=<strong>"beam-card"</strong><em>&gt;</em>
+    <em>&lt;div</em> class=<strong>"card-content"</strong><em>&gt;</em>
+      <em>&lt;h2&gt;</em>Creative Studio<em>&lt;/h2&gt;</em>
+      <em>&lt;p&gt;</em>Ideas made visible<em>&lt;/p&gt;</em>
+    <em>&lt;/div&gt;</em>
+  <em>&lt;/article&gt;</em>
+<em>&lt;/section&gt;</em></code></pre>
+      </div>
+      <div class="side-panels">
+        <div class="comment">Comment “Beam” for code</div>
+        <div class="preview-note">Must Check Live Preview <span>↗</span></div>
+        <div class="code-panel">
+          <div class="panel-head"><span class="file-icon css-icon">✳</span><b>style.css</b><span class="window-dots"><i></i><i></i><i></i></span></div>
+          <pre><code><em>.beam-card</em> {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #11101a;
+}
+<em>.beam-card::before</em> {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: conic-gradient(
+    from var(--angle),
+    transparent 65%,
+    #b58cff, #78e7ff,
+    transparent 85%);
+  animation: rotate 4s linear infinite;
+}</code></pre>
+        </div>
+        <div class="code-panel js-panel">
+          <div class="panel-head"><span class="file-icon js-icon">JS</span><b>script.js</b><span class="window-dots"><i></i><i></i><i></i></span></div>
+          <pre><code><pink>const</pink> cards = document.querySelectorAll(
+  <strong>".beam-card"</strong>
+);
+cards.forEach((card) =&gt; {
+  card.addEventListener(<strong>"pointermove"</strong>, e =&gt; {
+    <pink>const</pink> rect = card.getBoundingClientRect();
+    card.style.setProperty(<strong>"--x"</strong>,
+      e.clientX - rect.left + <strong>"px"</strong>);
+  });
+});</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <footer><span class="creator-mark">CS</span><b>CODING.STELLA</b><span class="social">♥　▣　➤</span><small>LIKE　 SAVE　 SHARE</small></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
